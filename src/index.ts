@@ -60,7 +60,8 @@ const startServer = async () => {
       logger.info(`🚀 GoWell server running on PORT ${env.PORT} [${env.NODE_ENV}]`);
     });
   } catch (error) {
-    logger.error("Failed to start server:", error);
+    // logger.error("Failed to start server:", error);
+    logger.error({ err: error }, "Failed to start server");
     process.exit(1);
   }
 };
