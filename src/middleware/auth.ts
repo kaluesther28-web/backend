@@ -53,6 +53,8 @@ export const isProvider = asyncWrapper(
     const token = authHeader.split(" ")[1];
     const payload = verifyToken(token as string);
 
+    
+
     if (!payload.roles?.includes("provider")) {
       throw ApiError.forbidden("Access denied — providers only");
     }
