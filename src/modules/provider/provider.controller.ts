@@ -23,7 +23,8 @@ export class ProviderController {
 
   // GET /api/v1/providers/:providerId
   static async getProviderById(req: Request, res: Response) {
-    const { providerId } = req.params;
+    // const { providerId } = req.params;
+    const providerId = req.params.providerId as string;
     const result = await ProviderService.getProviderById(providerId);
     res.status(200).json(result);
   }
