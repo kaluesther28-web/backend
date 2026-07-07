@@ -1,6 +1,8 @@
+import type { Document } from "mongoose";
+
 export type UserRolesEnum = ("user" | "provider" | "admin")[];
 
-export interface IUser {
+export interface IUser extends Document {
   firstName:   string;
   lastName:    string;
   email:       string;
