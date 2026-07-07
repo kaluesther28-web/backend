@@ -1,32 +1,6 @@
-// import type { Document, ObjectId } from "mongoose";
-
-// export type UserRolesEnum = ("user" | "provider" | "admin")[];
-
-// export interface IUser extends Document {
-//   firstName:   string;
-//   lastName:    string;
-//   email:       string;
-//   phoneNumber: string;
-//   password:    string | undefined;
-//   isActive:    boolean;
-//   isVerified:  boolean;
-//   roles:       UserRolesEnum;
-//   createdAt:   Date;
-//   updatedAt:   Date;
-// }
-
-// export interface AuthenticatedUser {
-//   userId: ObjectId;
-//   roles:  UserRolesEnum;
-//   email?: string;
-// }
-
-
-import type { Document, ObjectId } from "mongoose";
-
 export type UserRolesEnum = ("user" | "provider" | "admin")[];
 
-export interface IUser extends Document {
+export interface IUser {
   firstName:   string;
   lastName:    string;
   email:       string;

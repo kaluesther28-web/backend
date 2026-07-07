@@ -1,6 +1,5 @@
 import type { Request, Response } from "express";
 import { AuthService } from "./auth.service.js";
-import type { AuthenticatedUser } from "../user/user.interface.js";
 
 export class AuthController {
   // POST /api/v1/auth/register
@@ -19,7 +18,8 @@ export class AuthController {
 
   // GET /api/v1/auth/me
   static async getUser(req: Request, res: Response) {
-    const { userId } = req.user as AuthenticatedUser;
+    // const { userId } = req.user as AuthenticatedUser;
+    const { userId } = req.user as any;
     const result = await AuthService.getUser(userId);
     res.status(200).json(result);
   }
