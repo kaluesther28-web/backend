@@ -53,7 +53,8 @@ export class RequestService {
 
     if (!request) throw ApiError.notFound("Request not found");
 
-    const isOwner    = request.userId._id.toString() === userId.toString();
+    // const isOwner    = request.userId._id.toString() === userId.toString();
+    const isOwner = (request.userId as any)._id.toString() === userId.toString();
     const isProvider = request.providerId &&
       (request.providerId as any)._id?.toString() === userId.toString();
 
